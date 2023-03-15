@@ -18,9 +18,13 @@ From the dataset we will be using to build the predict model customer churn is a
 
 ## Data
 
+![graph1](./images/churn-data.png)
+
 Looking at the dataset, we have the rows of different accounts containing the variable churn, which we will be our target variable. The other columns will be our independent variables. Account length is the number of months that the account has been active. Area code is a code, splitting the country into 3 regions. Voice mail plan is whether the customer has a voicemail plan and number of vmail messages is how many voicemail messages the customer received. Total day/eve/night/intl minute/calls/charges are how many minutes calls and the charge in dollars respectively for the different times of the day or if it was an international call. Customer service calls is how many times the customer called customer service. 
 
 There is also state and phone number which we will drop as these should both be arbitrary.
+
+![graph2](./images/churn-heat-map.png)
 
 Because of perfect correlation between the minutes for phone calls and the cost for each erspective category, we will create a total cost column and remove the individual charge columns. This is not the total cost for the customers bills, as it does not include things such as voicemail plan, but is the total cost for the calls made. 
 ***
@@ -40,23 +44,63 @@ We then used a K-Nearest Neighbor model, pipeline methods and ensemble methods s
 
 ## Results
 
-We found that Mystery and Horror are both high ROI genres with low cost of production and would make ideal starting genres for a new movie to start this program.
-![graph1](./images/genreROI.png)
-![graph2](./images/genreBudget.png)
-***
-For the release month May had both the highest ROI of all months and a lower number of release dates making it an ideal launch Month.
-![graph3](./images/monthROI.png)
-![graph4](./images/MonthSum.png)
-***
-We also found that James Wan, David F. Sandberg, and M. Night Shyamalan would all make great directors for our starting films with their experience and success in these genres.
-![graph5](./images/directorMystery.png)
-![graph6](./images/directorHorror.png)
-***
-Questions to consider:
-* How do you interpret the results?
-* How confident are you that your results would generalize beyond the data you have?
+For the most significant variables we found that the total cost was the strongest feature in predicting if a customer would churn, followed by number of voicemails, anything retaining to international calling, and customer service calls.
+![graph3](./images/linear-model.png)
 ***
 
+For the linear regression model that we started with, we observed the following:
+Precsion Score: 0.4706
+Recall Score: 0.1333
+Accuracy Score: 0.8537
+F1-Score: 0.2078
+Mean Cross Validation: 0.6547
+![graph4](./images/linear-model.png)
+***
+
+For the decission tree model, we observed the following:
+Precsion Score: 0.7846
+Recall Score: 0.8500
+Accuracy Score: 0.9448
+F1-Score: 0.8160
+Mean Cross Validation: 0.9616
+![graph5](./images/tree.png)
+***
+
+For the optimized decission tree model, we observed the following by setting the max depth to 6 and the minimum samples per split to 12:
+Precsion Score: 0.9902
+Recall Score: 0.8417
+Accuracy Score: 0.9760
+F1-Score: 0.9099
+Mean Cross Validation: 0.9724
+![graph6](./images/better-tree.png)
+***
+
+For the Ranodm Forest model, we observed the following by setting the max depth to 5, the max features to 10 and the number of estimators to 20:
+Precsion Score: 0.9904
+Recall Score: 0.8583
+Accuracy Score: 0.9784
+F1-Score: 0.9196
+Mean Cross Validation: 0.9700
+![graph7](./images/forest.png)
+***
+
+The best performing model that we found, with confirmation from the cross validation, was a gradient boost model:
+Precsion Score: 0.9811
+Recall Score: 0.8667
+Accuracy Score: 0.9784
+F1-Score: 0.9204
+Mean Cross Validation: 0.9772
+![graph8](./images/boost.png)
+***
+
+We also tried an XGBoost model, although it was slighlty behind the gradient boost model:
+Precsion Score: 0.9904
+Recall Score: 0.8538
+Accuracy Score: 0.9784
+F1-Score: 0.9196
+Mean Cross Validation: 0.9736
+![graph9](./images/xgboost.png)
+***
 
 ## Conclusions
 
@@ -71,7 +115,7 @@ To improve the model further, there could be opportunities to run more grid sear
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./micro-movie-project.ipynb) or our [presentation](./micro_movie_presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](./tele-model.ipynb) or our [presentation](./micro_movie_presentation.pdf).
 
 For any additional questions, please contact **Grant Edwards, grantedwards11@gmail.com**
 
