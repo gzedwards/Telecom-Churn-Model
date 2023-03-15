@@ -4,31 +4,25 @@
 
 ## Overview
 
-Microsoft wants to launch a new streaming and movie division to compete within the theatric box office and home entertainment industry that has high potential to generate revenue but is a competitive industry. To support the launch, we have analyzed data from past movies to find the best genres Mystery and Horror, with high return on investments and low cost of production. May would be an ideal launch month as it historically has a lower number of releases and the highest ROI. We also found that James Wan, David F. Sandberg, and M. Night Shyamalan would all make great directors for our starting films with their experience and success in these genres.
+SyriaTel is experiencing a high level of customers churning and would like to find a way to help identify customers that will potentially leave before they do. To help solve this issue, we will use machine learning models to help predict customers that will churn. Being able to identify customers thar will likely churn will be extremely useful in helping with customer retention and give the company an opportunity to reach out and work with customers to help keep them as customers.
+
+To accomplish this goal we will use historical data from the organization that contains various metrics that we will use to predict whether a customer will churn or not. Some of the data that is included in that dataset, including the length of time the customer had the account, whether the customer has a voicemail plan, the total time and charges for the calls and whether or not the customer has had customer service calls, among other things.
 ***
 
 ## Business Problem
 
-Microsoft wants to start a new streaming and movie division to compete with the likes of Netflix, Hulu, Amazon, Apple, and other major streaming services after seeing competitors’ various success in the field and it is good for large businesses to expand into a variety of industries as to have a more diverse portfolio. The theatric box office and home entertainment is a $100 billion dollar industry (variety, 2022). With a sector this large and with high potential return on investment, it would be a great opportunity for Microsoft to achieve an additional source of revenue for Microsoft, it will be another means to reach more potential customers for other sectors of the organization. 
+Customer churning is always a major problem for business, as it represents a loss in customers and revenue and poses a major challenge for a business to grow. Reducing customer churn is an important part of running a business and being able to recognize what is causing customers to leave is a great recognition of a businesses weaknesses. Being able to predict when a customer will churn before they do also will give SyriaTel an opportunity to make an effort to try and retain the customers business through offers and improved customer service. 
 
-To find where to start this new division we will be answering the following questions:
-
-
-* What is the best genre of movie to start with?
-* When would be the ideal release date?
-* Who should be chosen as the director for the film?
-
-To accomplish this, we will be using data from IMDB, Rotten Tomatoes, TheMovieDB and The Numbers.
-
-Breaking into the theatric and home entertainment industry can be difficult with many big competitors already established and can have large cost of entry, with many films costing tens or even hundreds of millions of dollars to produce. The reason why we are focusing on these key points is that we can find the best genres to break into the industry without high costs of production, when to launch our program, so that we are not getting lost in a sea of compaction, and finding a director who has already found success in the genre and the industry to give us a solid backbone to get off to a good start. 
+From the dataset we will be using to build the predict model customer churn is at 14%, and accounts for 16% of total revenue ($31,567 loss of $198,146 gross revenue). The mean loss per customer is $65.36. Knowing the total loss and the loss per customer gives us an understanding as well for how much the company should spend to try and retain customers, as it would not make sense to spend more than the loss to try and retain customers.
 ***
 
 ## Data
 
-The data we will be using for this project comes from Box Office Mojo, IMDB, Rotten Tomatoes, TheMovieDB and The Numbers. It contains information on movies, such as: the key personal involved in producing the films, reviews, and financials.
-The key factors that we will be using to find achieve our goals of best genre, time of release and ideal director will be the financials of the movies (global gross and production budget), the release month of films and how films perform in each month, and who directed the most successful films in the genre that has the most potential. This should leave s with a solid starting point to break into the cinematic industry. 
+Looking at the dataset, we have the rows of different accounts containing the variable churn, which we will be our target variable. The other columns will be our independent variables. Account length is the number of months that the account has been active. Area code is a code, splitting the country into 3 regions. Voice mail plan is whether the customer has a voicemail plan and number of vmail messages is how many voicemail messages the customer received. Total day/eve/night/intl minute/calls/charges are how many minutes calls and the charge in dollars respectively for the different times of the day or if it was an international call. Customer service calls is how many times the customer called customer service. 
 
-The most important data we will be looking it is the financials. Besides global gross and the production budget, we will look at profit (global gross – production budget) and the return of investment (ROI = (profit/production budget)*100). There are other factors that we will not be going into that are not factored into this (such as advertising and other expenses). 
+There is also state and phone number which we will drop as these should both be arbitrary.
+
+Because of perfect correlation between the minutes for phone calls and the cost for each erspective category, we will create a total cost column and remove the individual charge columns. This is not the total cost for the customers bills, as it does not include things such as voicemail plan, but is the total cost for the calls made. 
 ***
 
 ## Methods
