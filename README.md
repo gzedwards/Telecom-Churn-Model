@@ -152,7 +152,7 @@ To improve the model further, there could be opportunities to run more grid sear
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./tele-model.ipynb) or our [presentation](./micro_movie_presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](./tele-model.ipynb) or our [presentation](./tele-model-presentation.pdf).
 
 For any additional questions, please contact **Grant Edwards, grantedwards11@gmail.com**
 
@@ -162,8 +162,8 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── micro-movie-project.ipynb           <- Narrative documentation of analysis in Jupyter notebook
-├── micro_movie_presentation.pdf        <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
-└── images                              <- Both sourced externally and generated from code
+├── tele-model.ipynb               <- Narrative documentation of analysis in Jupyter notebook
+├── tele-model-presentation.pdf        <- PDF version of project presentation
+├── Data                                <- Both sourced externally and generated from code
+└── images                              <- Generated from code
 ```
