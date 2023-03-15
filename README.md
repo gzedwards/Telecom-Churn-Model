@@ -65,47 +65,77 @@ Mean Cross Validation: 0.6547
 ***
 
 For the decission tree model, we observed the following:
+
 Precision Score: 0.7846
+
 Recall Score: 0.8500
+
 Accuracy Score: 0.9448
+
 F1-Score: 0.8160
+
 Mean Cross Validation: 0.9616
+
 ![graph5](./images/tree.png)
 ***
 
 For the optimized decission tree model, we observed the following by setting the max depth to 6 and the minimum samples per split to 12:
+
 Precision Score: 0.9902
+
 Recall Score: 0.8417
+
 Accuracy Score: 0.9760
+
 F1-Score: 0.9099
+
 Mean Cross Validation: 0.9724
+
 ![graph6](./images/better-tree.png)
 ***
 
 For the Ranodm Forest model, we observed the following by setting the max depth to 5, the max features to 10 and the number of estimators to 20:
+
 Precision Score: 0.9904
+
 Recall Score: 0.8583
+
 Accuracy Score: 0.9784
+
 F1-Score: 0.9196
+
 Mean Cross Validation: 0.9700
+
 ![graph7](./images/forest.png)
 ***
 
 The best performing model that we found, with confirmation from the cross validation, was a gradient boost model:
+
 Precision Score: 0.9811
+
 Recall Score: 0.8667
+
 Accuracy Score: 0.9784
+
 F1-Score: 0.9204
+
 Mean Cross Validation: 0.9772
+
 ![graph8](./images/boost.png)
 ***
 
 We also tried an XGBoost model, although it was slighlty behind the gradient boost model:
+
 Precision Score: 0.9904
+
 Recall Score: 0.8538
+
 Accuracy Score: 0.9784
+
 F1-Score: 0.9196
+
 Mean Cross Validation: 0.9736
+
 ![graph9](./images/xgboost.png)
 ***
 
