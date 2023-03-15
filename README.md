@@ -49,7 +49,7 @@ For the most significant variables we found that the total cost was the stronges
 ***
 
 For the linear regression model that we started with, we observed the following:
-Precsion Score: 0.4706
+Precision Score: 0.4706
 Recall Score: 0.1333
 Accuracy Score: 0.8537
 F1-Score: 0.2078
@@ -58,7 +58,7 @@ Mean Cross Validation: 0.6547
 ***
 
 For the decission tree model, we observed the following:
-Precsion Score: 0.7846
+Precision Score: 0.7846
 Recall Score: 0.8500
 Accuracy Score: 0.9448
 F1-Score: 0.8160
@@ -67,7 +67,7 @@ Mean Cross Validation: 0.9616
 ***
 
 For the optimized decission tree model, we observed the following by setting the max depth to 6 and the minimum samples per split to 12:
-Precsion Score: 0.9902
+Precision Score: 0.9902
 Recall Score: 0.8417
 Accuracy Score: 0.9760
 F1-Score: 0.9099
@@ -76,7 +76,7 @@ Mean Cross Validation: 0.9724
 ***
 
 For the Ranodm Forest model, we observed the following by setting the max depth to 5, the max features to 10 and the number of estimators to 20:
-Precsion Score: 0.9904
+Precision Score: 0.9904
 Recall Score: 0.8583
 Accuracy Score: 0.9784
 F1-Score: 0.9196
@@ -85,7 +85,7 @@ Mean Cross Validation: 0.9700
 ***
 
 The best performing model that we found, with confirmation from the cross validation, was a gradient boost model:
-Precsion Score: 0.9811
+Precision Score: 0.9811
 Recall Score: 0.8667
 Accuracy Score: 0.9784
 F1-Score: 0.9204
@@ -94,7 +94,7 @@ Mean Cross Validation: 0.9772
 ***
 
 We also tried an XGBoost model, although it was slighlty behind the gradient boost model:
-Precsion Score: 0.9904
+Precision Score: 0.9904
 Recall Score: 0.8538
 Accuracy Score: 0.9784
 F1-Score: 0.9196
