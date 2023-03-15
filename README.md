@@ -45,15 +45,22 @@ We then used a K-Nearest Neighbor model, pipeline methods and ensemble methods s
 ## Results
 
 For the most significant variables we found that the total cost was the strongest feature in predicting if a customer would churn, followed by number of voicemails, anything retaining to international calling, and customer service calls.
+
 ![graph3](./images/linear-model.png)
 ***
 
 For the linear regression model that we started with, we observed the following:
+
 Precision Score: 0.4706
+
 Recall Score: 0.1333
+
 Accuracy Score: 0.8537
+
 F1-Score: 0.2078
+
 Mean Cross Validation: 0.6547
+
 ![graph4](./images/linear-model.png)
 ***
 
